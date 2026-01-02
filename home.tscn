@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2lhkj1qoe37i"]
+
+[ext_resource type="PackedScene" uid="uid://dt6u7h84xc2dy" path="res://level1tutorial.tscn" id="1_1ey7h"]
+[ext_resource type="Script" uid="uid://dr4ivqqaogje0" path="res://home.gd" id="1_o1ld7"]
+[ext_resource type="PackedScene" uid="uid://dvwshul5jommn" path="res://character.tscn" id="2_o1ld7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o1ld7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1600.0
+offset_bottom = 720.0
+color = Color(0.419116, 0.582693, 0.769613, 1)
+
+[node name="Node2D" parent="." instance=ExtResource("1_1ey7h")]
+
+[node name="Node2D2" parent="." instance=ExtResource("2_o1ld7")]
+position = Vector2(201, 567)
