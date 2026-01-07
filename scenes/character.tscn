@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvwshul5jommn"]
+
+[ext_resource type="Texture2D" uid="uid://bvrhxoj1d8k13" path="res://assets levels/OIP.png" id="1_glpr6"]
+
+[sub_resource type="GDScript" id="GDScript_glpr6"]
+script/source = "extends CharacterBody2D
+@onready var tmr = $Timer
+var contactime= 0.0
+const SPEED = 300.0
+var JUMP_VELOCITY = -400.0
+var grav = 40000
+var FMC = 3
+var FRTC = false
+var  resetime = 0.2
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y = grav*delta
+	var supported := is_on_ceiling()
+	if supported:
+		contactime += 0.05
+	if contactime >= resetime and not FRTC :
+		FMC = 3
+		FRTC = true
+		contactime = 0
+	else  :
+		FRTC = false
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") :
+		if  is_on_ceiling() or is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			JUMP_VELOCITY = -1*JUMP_VELOCITY
+			grav = -1*grav
+		elif FMC > 0 :
+			velocity.y = JUMP_VELOCITY
+			JUMP_VELOCITY = -1*JUMP_VELOCITY
+			grav = -1*grav
+			FMC = FMC - 1
+	print(FMC,\"  \", FRTC,\"  \", contactime)
+	
+	if position.x >= 700 :
+		velocity.x = 0
+	else:
+		velocity.x =70
+	if position.x < 0 or position.y > 720 or position.y < 0 :
+		get_tree().quit()
+	if is_on_floor():
+		rotation += 0.04
+	elif is_on_ceiling():
+		rotation += -0.04
+	move_and_slide()
+
+		
+	
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjt0s"]
+radius = 54.0
+height = 110.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjt0s"]
+atlas = ExtResource("1_glpr6")
+region = Rect2(49.5153, 32.8615, 105.696, 105.6)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = SubResource("GDScript_glpr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_pjt0s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_pjt0s")

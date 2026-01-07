@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqrctrlpida2i"]
+
+[ext_resource type="Texture2D" uid="uid://8denaw562v20" path="res://assets levels/City background sky.png" id="1_xehqc"]
+[ext_resource type="Texture2D" uid="uid://el0ob04567yr" path="res://assets levels/City background layer1.png" id="2_jougr"]
+[ext_resource type="Texture2D" uid="uid://bvl8u4gtke1dq" path="res://assets levels/City background layer2.png" id="3_eq6nc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(2, 0)
+
+[node name="Parallax2D" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(2.28, 0)
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/Parallax2D"]
+repeat_size = Vector2(1596.98, 0)
+
+[node name="CityBackgroundSky" type="Sprite2D" parent="ParallaxBackground/Parallax2D/Parallax2D2"]
+position = Vector2(800.5, 358)
+scale = Vector2(1.55957, 2.06936)
+texture = ExtResource("1_xehqc")
+
+[node name="Parallax2D3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(2.28, 0)
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/Parallax2D3"]
+repeat_size = Vector2(1596.98, 0)
+
+[node name="CityBackgroundSky" type="Sprite2D" parent="ParallaxBackground/Parallax2D3/Parallax2D2"]
+position = Vector2(800.5, 358)
+scale = Vector2(1.55957, 2.06936)
+texture = ExtResource("2_jougr")
+
+[node name="Parallax2D2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(2.28, 0)
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/Parallax2D2"]
+repeat_size = Vector2(1596.98, 0)
+
+[node name="CityBackgroundSky" type="Sprite2D" parent="ParallaxBackground/Parallax2D2/Parallax2D2"]
+position = Vector2(800.5, 358)
+scale = Vector2(1.55957, 2.06936)
+texture = ExtResource("3_eq6nc")
