@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch4kd30pwol86"]
+
+[ext_resource type="Texture2D" uid="uid://usfa8u0n0p30" path="res://kenny assets ui/Blue/button_round_depth_gloss.svg" id="1_27fn8"]
+[ext_resource type="Script" uid="uid://cvxcdkd4mqnda" path="res://scenes/ui.gd" id="1_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://pf8q04pyx5rf" path="res://kenny assets ui/Blue/button_round_gloss.svg" id="2_nltto"]
+[ext_resource type="Texture2D" uid="uid://dr510k56qdffd" path="res://kenny assets ui/Blue/button_round_gradient.svg" id="3_27fn8"]
+
+[node name="Node2D" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_gdt2y")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(39, 557)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_27fn8")
+texture_pressed = ExtResource("2_nltto")
+action = "ui_accept"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(1439, 564)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_27fn8")
+texture_pressed = ExtResource("3_27fn8")
+action = "ui_accept"
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]
+[connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="released" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_released"]

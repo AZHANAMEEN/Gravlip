@@ -1,18 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgypsyfin2hcj"]
+[gd_scene load_steps=6 format=3 uid="uid://bgypsyfin2hcj"]
 
 [ext_resource type="PackedScene" uid="uid://dt6u7h84xc2dy" path="res://scenes/level1tutorial.tscn" id="1_1ey7h"]
 [ext_resource type="Script" uid="uid://dr4ivqqaogje0" path="res://scenes/home.gd" id="1_o1ld7"]
 [ext_resource type="PackedScene" uid="uid://dvwshul5jommn" path="res://scenes/character.tscn" id="2_o1ld7"]
 [ext_resource type="PackedScene" uid="uid://cqrctrlpida2i" path="res://scenes/background.tscn" id="4_2ayvv"]
+[ext_resource type="PackedScene" uid="uid://ch4kd30pwol86" path="res://scenes/ui.tscn" id="5_uhids"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o1ld7")
 
+[node name="Node2D4" parent="." instance=ExtResource("5_uhids")]
+
 [node name="Node2D" parent="." instance=ExtResource("1_1ey7h")]
 
 [node name="Node2D2" parent="." instance=ExtResource("2_o1ld7")]
-position = Vector2(184, 552)
+position = Vector2(162, 199)
 scale = Vector2(0.606494, 0.606494)
+floor_max_angle = 0.523599
 
 [node name="Node2D3" parent="." instance=ExtResource("4_2ayvv")]
 position = Vector2(-23, -30)
