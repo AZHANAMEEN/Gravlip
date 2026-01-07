@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvwshul5jommn"]
+[gd_scene load_steps=5 format=3 uid="uid://dvwshul5jommn"]
 
-[ext_resource type="Texture2D" uid="uid://cis5878j2bva4" path="res://icon.svg" id="1_glpr6"]
+[ext_resource type="Texture2D" uid="uid://bdaois5gf8ie4" path="res://assets levels/kenney_pixel-platformer-blocks/OIP.png" id="1_glpr6"]
 
 [sub_resource type="GDScript" id="GDScript_glpr6"]
 script/source = "extends CharacterBody2D
@@ -43,6 +43,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x =70
 	if position.x < 0 or position.y > 720 or position.y < 0 :
 		get_tree().quit()
+	if is_on_floor():
+		rotation += 0.04
+	elif is_on_ceiling():
+		rotation += -0.04
 	move_and_slide()
 
 		
@@ -50,8 +54,12 @@ func _physics_process(delta: float) -> void:
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjt0s"]
-radius = 38.0
-height = 76.0
+radius = 54.0
+height = 110.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjt0s"]
+atlas = ExtResource("1_glpr6")
+region = Rect2(49.5153, 32.8615, 105.696, 105.6)
 
 [node name="Node2D" type="CharacterBody2D"]
 script = SubResource("GDScript_glpr6")
@@ -59,12 +67,9 @@ script = SubResource("GDScript_glpr6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pjt0s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Icon" type="Sprite2D" parent="."]
-texture_filter = 2
-scale = Vector2(0.445312, 0.371094)
-texture = ExtResource("1_glpr6")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_pjt0s")
