@@ -43,7 +43,9 @@ Think:
 
 > **Early development / experimental phase**
 
-This project is actively evolving. Mechanics may change, break, or get rewritten entirely — that’s intentional.
+This project is actively evolving. Mechanics may change, break, or get rewritten entirely.That’s intentional.
+Also shoutout to www.kenney.nl for their great assets 👍.  
+
 
 ---
 
