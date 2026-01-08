@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x =70
 	if position.x < 0 or position.y > 720 or position.y < 0 :
-		get_tree().quit()
+		get_tree().change_scene_to_file(\"res://scenes/homescreen.tscn\")
 	if is_on_floor():
 		rotation += 0.04
 	elif is_on_ceiling():
