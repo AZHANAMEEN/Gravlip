@@ -1,4 +1,4 @@
-# 🎮 [Game Name – WIP]
+# 🎮 [Gravlip]
 
 Hi 👋  
 I’m **Azz**, and this is a **gravity-based ball & obstacle avoidance game** I’m currently building.
