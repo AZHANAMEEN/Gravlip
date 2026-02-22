@@ -1,7 +1,7 @@
 extends Node
 var prs1 = false 
 var prs2 = false
-
+var posplr = 0.0
 func _ready() -> void:
 	pass # Replace with function body.
 

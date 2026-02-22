@@ -24,8 +24,7 @@ Autoloadscript="*res://autoloadscript.gd"
 
 window/size/viewport_width=1600
 window/size/viewport_height=720
-window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
 [input_devices]

@@ -8,13 +8,16 @@ script/source = "extends CharacterBody2D
 var contactime= 0.0
 const SPEED = 300.0
 var JUMP_VELOCITY = -400.0
-var grav = 40000
+@export var grav = 40000
 var FMC = 3
 var FRTC = false
 var  resetime = 0.2
+var CURR_POS = global_position.x
 func _physics_process(delta: float) -> void:
+	
 	if not is_on_floor():
 		velocity.y = grav*delta
+		
 	var supported := is_on_ceiling()
 	if supported:
 		contactime += 0.05
@@ -35,10 +38,7 @@ func _physics_process(delta: float) -> void:
 			JUMP_VELOCITY = -1*JUMP_VELOCITY
 			grav = -1*grav
 			FMC = FMC - 1
-	if position.x >= 700 :
-		velocity.x = 0
-	else:
-		velocity.x =70
+	velocity.x = 200
 	if position.x < 0 or position.y > 720 or position.y < 0 :
 		get_tree().change_scene_to_file(\"res://scenes/homescreen.tscn\")
 	if is_on_floor():
@@ -71,3 +71,9 @@ wait_time = 0.2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = SubResource("AtlasTexture_pjt0s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(87, -9)
+limit_left = -500
+limit_top = -2
+limit_bottom = -800

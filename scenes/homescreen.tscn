@@ -2595,9 +2595,9 @@ texture = ExtResource("5_v5pf5")
 modulate = Color(0, 0, 0, 0.333333)
 z_index = -1
 offset_left = -29.0
-offset_top = -43.0
+offset_top = -5.0
 offset_right = 1654.0
-offset_bottom = 776.0
+offset_bottom = 715.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -2616,30 +2616,30 @@ autoplay = "default"
 frame_progress = 0.826623
 
 [node name="Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0.12549)
+modulate = Color(1, 1, 1, 0.0196078)
 z_index = 1
 offset_left = -2.0
 offset_top = 2.0
-offset_right = 1604.0
+offset_right = 1491.0
 offset_bottom = 702.0
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 z_index = 5
-position = Vector2(907, 400)
+position = Vector2(1513, 358)
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("AtlasTexture_5afle")
 texture_pressed = SubResource("AtlasTexture_qe7se")
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
 z_index = 5
-position = Vector2(785, 397)
+position = Vector2(1511, 552)
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("AtlasTexture_41mhs")
 texture_pressed = SubResource("AtlasTexture_rpqjd")
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
 z_index = 5
-position = Vector2(677, 398)
+position = Vector2(1508, 456)
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("AtlasTexture_7gqf7")
 texture_pressed = SubResource("AtlasTexture_7qggu")

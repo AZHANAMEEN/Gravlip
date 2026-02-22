@@ -8,4 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	lvl.position.x += -2
+	lvl.position.x += 0
+	
+	Autoloadscript.posplr = $Node2D2.global_position.x
+	print($Node2D2.global_position.x)
