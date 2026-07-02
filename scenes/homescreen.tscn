@@ -2622,6 +2622,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = 1491.0
 offset_bottom = 702.0
+scale = Vector2(1.00463, 1.02042)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 z_index = 5
@@ -2650,3 +2651,4 @@ tile_map_data = PackedByteArray("AAAAAAAAAQADAAIAAAABAAAAAQADAAIAAAACAAAAAQADAAI
 tile_set = SubResource("TileSet_77fpp")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
